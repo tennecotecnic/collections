@@ -3,18 +3,17 @@ package com.prozorov;
 
 public class Main {
     public static void main(String[] args) {
+//        MyLinkedList<Integer> alphabet1 = new MyLinkedList<>();
+//        alphabet1.add(33);
+//        alphabet1.add(22);
+//        alphabet1.add(11);
+//        System.out.println(alphabet1);
+//        alphabet1.sort();
+//        System.out.println(alphabet1);
 
-        MyLinkedList<Integer> alphabet1 = new MyLinkedList<>();
-        alphabet1.add(33);
-        alphabet1.add(22);
-        alphabet1.add(11);
-        System.out.println(alphabet1);
-        alphabet1.sort();
-        System.out.println(alphabet1);
-
-//        MyArrayList<String> myList1 = new MyArrayList<>();
-//        myList1.add("Ivan");//0
-//        myList1.add("Nikita");//1
+        MyArrayList<String> myList1 = new MyArrayList<>();
+        myList1.add("Ivan");//0
+        myList1.add("Nikita");//1
 //        myList1.add("Ekaterina");//2
 //        myList1.add("Ignat");//3
 //        myList1.add("Vitaliy");//4
@@ -24,7 +23,13 @@ public class Main {
 //        myList1.add("Olga");//8
 //        myList1.add("Anna");//9
 //        myList1.add("Nikolay");//10
-//        myList1.remove(0);
+
+        MyLinkedList<String> list = new MyLinkedList<>(myList1);
+        //System.out.println(list.size());
+        System.out.println(list);
+
+
+
 //
 //        MyArrayList<String> myList2 = new MyArrayList<>();
 //        myList2.add("Matthew");

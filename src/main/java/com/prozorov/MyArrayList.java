@@ -1,11 +1,28 @@
 package com.prozorov;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 public class MyArrayList<T extends Object & Comparable<T>> {
     private T [] baseArray;
     private Integer size = 0;
     private boolean isArrayListSorted = false;
+
+
+    public MyArrayList (Collection<? extends T> collection) {
+        for (Object o: collection) {
+            T element = (T) o;
+            add(element);
+        }
+    }
+
+
+    public  MyArrayList (MyLinkedList<T> linkedList) {
+        baseArray = (T[]) new Object[linkedList.size()];
+        for (int i=0; i< linkedList.size(); i++) {
+            add(linkedList.get(i));
+        }
+    }
 
 
     public MyArrayList () {

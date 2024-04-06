@@ -1,13 +1,29 @@
 package com.prozorov;
 
 
-public class MyLinkedList <T extends Comparable>{
+import java.util.Collection;
+
+public class MyLinkedList <T extends Comparable<T>>{
     private Integer size = 0;
     private Node <T> first = null;
 
     private Node <T> last = null;
 
     public boolean isLinkedListSorted = false;
+
+
+    public MyLinkedList (Collection<? extends T> collection) {
+        for(Object o: collection) {
+            T element = (T) o;
+            add(element);
+        }
+    }
+
+    public MyLinkedList (MyArrayList<T> arrayList) {
+        for(int i=0; i< arrayList.size(); i++) {
+            add(arrayList.get(i));
+        }
+    }
 
 
     public MyLinkedList() {}
@@ -46,7 +62,7 @@ public class MyLinkedList <T extends Comparable>{
         Node node = first;
         for (int i=0; i < size; i++) {
             if (size == 0 || index >= size) {
-                throw new NullPointerException();
+                throw new IndexOutOfBoundsException();
             } else if (size == 1 && index == 0) {
                 first = null;
                 last = null;
@@ -77,7 +93,7 @@ public class MyLinkedList <T extends Comparable>{
         T value = null;
         for (int i=0; i < size; i++) {
             if (size == 0 || index >= size) {
-                throw new NullPointerException();
+                throw new IndexOutOfBoundsException();
             } else if (i < index) {
                 node = node.next;
             } else if (i == index) {
